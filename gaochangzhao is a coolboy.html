@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高长钊大帅逼</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .text {
+            position: absolute;
+            font-size: 5rem;
+            font-weight: bold;
+            color: white;
+            animation: move 5s linear infinite, rainbow 1s infinite;
+        }
+        @keyframes move {
+            0% {
+                transform: translate(-50%, -50%) translate(0, 0);
+            }
+            100% {
+                transform: translate(-50%, -50%) translate(100vw, 100vh);
+            }
+        }
+        @keyframes rainbow {
+            0% { color: red; }
+            16% { color: orange; }
+            33% { color: yellow; }
+            50% { color: green; }
+            66% { color: blue; }
+            83% { color: indigo; }
+            100% { color: violet; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const createText = () => {
+            const text = document.createElement('div');
+            text.className = 'text';
+            text.innerText = '高长钊大帅逼';
+            text.style.left = `${Math.random() * 100}vw`;
+            text.style.top = `${Math.random() * 100}vh`;
+            document.body.appendChild(text);
+
+            setTimeout(() => {
+                text.remove();
+            }, 5000);
+        };
+
+        setInterval(createText, 200);
+    </script>
+</body>
+</html>
